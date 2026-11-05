@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAMELLE — Beauty Studio</title>
+<meta name="description" content="LAMELLE Beauty Studio — ламинирование ресниц и бровей, красота и уход в Усть-Каменогорске.">
+<!-- ПРЕВЬЮ ПРИ ОТПРАВКЕ ССЫЛКИ -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="LAMELLE — Beauty Studio">
+<meta property="og:description" content="Красота в каждой детали. Ламинирование ресниц и бровей в Усть-Каменогорске.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1200&h=630&fit=crop">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LAMELLE — Beauty Studio">
+<meta name="twitter:description" content="Красота в каждой детали">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1200&h=630&fit=crop">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --cream: #f8f5f0;
+    --beige: #e9ded2;
+    --brown: #806451;
+    --dark: #40332b;
+    --light: #fffdf9;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button, input, select, textarea {
+    font-family: inherit;
+}
+section {
+    padding: 100px 8%;
+    scroll-margin-top: 85px;
+}
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 18px;
+}
+.section-subtitle {
+    text-align: center;
+    color: #88796d;
+    font-size: 13px;
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background: var(--brown);
+    color: white;
+    border: 1px solid var(--brown);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: .3s;
+    cursor: pointer;
+}
+.btn:hover {
+    background: transparent;
+    color: var(--brown);
+}
+/* HEADER */
+header {
+    height: 85px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px #40332b0c;
+}
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    letter-spacing: 7px;
+    color: var(--brown);
+}
+.logo small {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-top: -5px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+nav a {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+nav a:hover {
+    color: #b18b70;
+}
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--brown);
+    cursor: pointer;
+}
+/* HERO */
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    padding: 80px 9%;
+    background:
+    linear-gradient(90deg, rgba(248,245,240,.96), rgba(248,245,240,.1)),
+    url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1800")
+    center/cover;
+}
+.hero-content {
+    max-width: 550px;
+}
+.hero-label {
+    letter-spacing: 5px;
+    font-size: 11px;
+    color: var(--brown);
+    margin-bottom: 20px;
+}
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 100px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    line-height: 1;
+}
+.hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+.hero p {
+    max-width: 400px;
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+/* ABOUT */
+.about {
+    background: var(--light);
+}
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+.about-content p {
+    font-size: 14px;
+    line-height: 2.2;
+    color: #75685d;
+}
+.about-signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-style: italic;
+    margin-top: 30px;
+    color: var(--brown);
+}
+/* MASTER */
+.master {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+.master-photo img {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+}
+.master-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.master-info p {
+    font-size: 13px;
+    line-height: 2.2;
+    color: #776a60;
+    margin-bottom: 20px;
+}
+.master-info ul {
+    list-style: none;
+    font-size: 12px;
+    line-height: 3;
+}
+.master-info li:before {
+    content: "✧ ";
+    color: var(--brown);
+}
+/* ADVANTAGES */
+.advantages {
+    background: var(--beige);
+}
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+.advantage {
+    padding: 25px 15px;
+}
+.advantage .symbol {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--brown);
+}
+.advantage h3 {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+.advantage p {
+    font-size: 11px;
+    line-height: 1.9;
+    color: #77685d;
+}
+/* SERVICES */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.service-card {
+    background: white;
+    text-align: center;
+    padding-bottom: 30px;
+    transition: .3s;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px #0000000c;
+}
+.service-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+.service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    margin: 23px 10px 10px;
+}
+.service-card p {
+    font-size: 11px;
+    line-height: 1.8;
+    color: #82766b;
+    padding: 0 20px;
+}
+/* PRICE */
+.price {
+    background: var(--beige);
+}
+.price-container {
+    max-width: 750px;
+    margin: auto;
+    background: var(--light);
+    padding: 45px;
+}
+.price-category {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    margin: 25px 0 10px;
+    color: var(--brown);
+}
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 19px 0;
+    border-bottom: 1px solid #e8ded5;
+    font-size: 13px;
+}
+.price-item b {
+    white-space: nowrap;
+    color: var(--brown);
+}
+.price-note {
+    font-size: 10px;
+    color: #897d72;
+    margin-top: 25px;
+    line-height: 1.8;
+}
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    transition: .4s;
+}
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+/* REVIEWS */
+.reviews {
+    background: var(--light);
+}
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.review-card {
+    background: var(--cream);
+    padding: 35px 25px;
+    text-align: center;
+}
+.stars {
+    color: #aa896e;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+.review-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1.6;
+}
+.review-card span {
+    display: block;
+    font-size: 10px;
+    margin-top: 20px;
+    color: #8b7c70;
+}
+/* PROMOTIONS */
+.promotion {
+    text-align: center;
+    background:
+    linear-gradient(#40332b88, #40332b88),
+    url("https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=1600")
+    center/cover;
+    color: white;
+}
+.promotion h2 {
+    font-size: 55px;
+}
+.promotion p {
+    font-size: 13px;
+    line-height: 2;
+    margin: 20px auto 30px;
+}
+.promotion .btn {
+    background: var(--cream);
+    color: var(--dark);
+    border-color: var(--cream);
+}
+/* CARE */
+.care {
+    background: var(--light);
+}
+.care-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+.care-card {
+    background: var(--cream);
+    padding: 35px;
+}
+.care-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    margin-bottom: 20px;
+}
+.care-card p {
+    font-size: 12px;
+    line-height: 2.3;
+    color: #786b60;
+}
+/* FAQ */
+.faq-list {
+    max-width: 800px;
+    margin: auto;
+}
+.faq-item {
+    border-bottom: 1px solid #d9cbbd;
+    padding: 22px 0;
+}
+.faq-item summary {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+.faq-item p {
+    font-size: 12px;
+    line-height: 2;
+    color: #796d63;
+    margin-top: 15px;
+}
+/* BOOKING */
+.booking {
+    background: var(--beige);
+}
+.booking-form {
+    max-width: 600px;
+    margin: auto;
+    background: var(--light);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #dfd1c4;
+    background: white;
+    outline: none;
+    font-size: 12px;
+}
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: var(--brown);
+}
+.booking-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.booking-form button {
+    width: 100%;
+}
+/* CONTACTS */
+.contacts {
+    text-align: center;
+}
+.contacts-info {
+    line-height: 3;
+    font-size: 13px;
+}
+.contacts-info a {
+    color: var(--brown);
+}
+.socials {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.socials a {
+    border-bottom: 1px solid var(--brown);
+    padding-bottom: 5px;
+    font-size: 12px;
+}
+/* FOOTER */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+footer .logo {
+    color: white;
+}
+footer p {
+    font-size: 10px;
+    color: #d4c6b9;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+footer a {
+    color: white;
+}
+/* MOBILE */
+@media(max-width: 1000px) {
+    nav {
+        gap: 10px;
+    }
+    nav a {
+        font-size: 9px;
+    }
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 750px) {
+    header {
+        height: 75px;
+    }
+    .menu-button {
+        display: block;
+    }
+    nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: var(--cream);
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 10px 15px #00000010;
+    }
+    nav.active {
+        display: flex;
+    }
+    nav a {
+        font-size: 12px;
+        padding: 5px;
+    }
+    section {
+        padding: 70px 6%;
+    }
+    .hero {
+        min-height: 570px;
+        background-position: 60% center;
+    }
+    .hero h1 {
+        font-size: 70px;
+    }
+    .hero h2 {
+        font-size: 28px;
+    }
+    .section-title {
+        font-size: 38px;
+    }
+    .master {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .master-photo img {
+        height: 400px;
+    }
+    .services-grid,
+    .gallery-grid,
+    .reviews-grid,
+    .care-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-grid img {
+        height: 400px;
+    }
+    .price-container,
+    .booking-form {
+        padding: 25px 18px;
+    }
+    .price-item {
+        font-size: 11px;
+    }
+    .promotion h2 {
+        font-size: 39px;
+    }
+}
+@media(max-width: 400px) {
+    .hero h1 {
+        font-size: 55px;
+    }
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <a href="#home" class="logo">
+        LAMELLE.
+        <small>BEAUTY STUDIO</small>
+    </a>
+<button class="menu-button" id="menuButton" aria-label="Открыть меню">☰</button>
+<nav id="navigation">
+    <a href="#home">Главная</a>
+    <a href="#about">О бренде</a>
+    <a href="#master">Мастер</a>
+    <a href="#services">Услуги</a>
+    <a href="#price">Цены</a>
+    <a href="#gallery">Работы</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#booking">Запись</a>
+    <a href="#contacts">Контакты</a>
+</nav>
+</header>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-label">BEAUTY • CARE • NATURAL</div>
+        <h1>LAMELLE.</h1>
+        <h2>Красота в каждой детали</h2>
+        <p>
+            Подчеркни свою естественную красоту.
+            Профессиональный уход за ресницами и бровями
+            с индивидуальным подходом к каждой клиентке.
+        </p>
+        <a href="#booking" class="btn">Записаться на процедуру</a>
+    </div>
+</section>
+<section class="about" id="about">
+    <h2 class="section-title">О бренде LAMELLE</h2>
+    <p class="section-subtitle">
+        Наша философия — естественная красота и забота о себе
+    </p>
+<div class="about-content">
+    <p>
+        LAMELLE — beauty-бренд, созданный для девушек,
+        которые любят ухоженность, естественность
+        и внимание к деталям.
+        Мы верим, что красота не требует кардинальных
+        изменений. Иногда достаточно подчеркнуть то,
+        что уже дано природой.
+        Наша главная задача — сделать процедуры
+        комфортными, а результат — красивым,
+        аккуратным и подходящим именно вам.
+        LAMELLE — это не просто процедуры, это время,
+        которое вы посвящаете себе.
+    </p>
+    <div class="about-signature">With love, LAMELLE.</div>
+</div>
+</section>
+<section class="master" id="master">
+    <div class="master-photo">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1000" alt="Мастер LAMELLE">
+    </div>
+<div class="master-info">
+    <h2>Знакомство с мастером</h2>
+    <p>
+        Привет! Я основатель и мастер LAMELLE.
+        Для меня важно, чтобы каждая клиентка
+        чувствовала себя комфортно и получала
+        качественный результат.
+    </p>
+    <p>
+        Я внимательно отношусь к пожеланиям,
+        подбираю индивидуальный подход и уделяю
+        особое внимание деталям каждой процедуры.
+    </p>
+    <ul>
+        <li>Индивидуальный подход</li>
+        <li>Внимание к пожеланиям клиента</li>
+        <li>Соблюдение гигиены</li>
+        <li>Качественные материалы</li>
+        <li>Забота о результате</li>
+    </ul>
+</div>
+</section>
+<section class="advantages">
+    <h2 class="section-title">Почему выбирают LAMELLE?</h2>
+    <p class="section-subtitle">Красота начинается с доверия</p>
+<div class="advantages-grid">
+    <div class="advantage">
+        <div class="symbol">✧</div>
+        <h3>Качество</h3>
+        <p>Внимание к каждой детали процедуры.</p>
+    </div>
+    <div class="advantage">
+        <div class="symbol">♡</div>
+        <h3>Забота</h3>
+        <p>Комфорт и внимательное отношение.</p>
+    </div>
+    <div class="advantage">
+        <div class="symbol">✿</div>
+        <h3>Индивидуальность</h3>
+        <p>Подбор оформления с учётом особенностей внешности.</p>
+    </div>
+    <div class="advantage">
+        <div class="symbol">✦</div>
+        <h3>Атмосфера</h3>
+        <p>Уютное пространство и приятное обслуживание.</p>
+    </div>
+</div>
+</section>
+<section id="services">
+    <h2 class="section-title">Наши услуги</h2>
+    <p class="section-subtitle">
+        Подчеркните свою естественную красоту вместе с LAMELLE
+    </p>
+<div class="services-grid">
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1583001809873-a128495da465?w=800" alt="Ламинирование ресниц">
+        <h3>Ламинирование ресниц</h3>
+        <p>Изгиб, выразительность и аккуратный внешний вид ресниц.</p>
+    </div>
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=800" alt="Ламинирование бровей">
+        <h3>Ламинирование бровей</h3>
+        <p>Укладка волосков и создание ухоженной формы.</p>
+    </div>
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1597225244660-1cd128c64284?w=800" alt="Коррекция бровей">
+        <h3>Коррекция бровей</h3>
+        <p>Аккуратная форма с учётом особенностей лица.</p>
+    </div>
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800" alt="Окрашивание бровей">
+        <h3>Окрашивание бровей</h3>
+        <p>Подбор подходящего оттенка и оформление бровей.</p>
+    </div>
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800" alt="Окрашивание ресниц">
+        <h3>Окрашивание ресниц</h3>
+        <p>Более насыщенный и выразительный цвет ресниц.</p>
+    </div>
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=800" alt="Уход за бровями и ресницами">
+        <h3>Дополнительный уход</h3>
+        <p>Средства для поддержания ухоженного состояния бровей и ресниц.</p>
+    </div>
+</div>
+</section>
+<section class="price" id="price">
+    <h2 class="section-title">Прайс-лист</h2>
+    <p class="section-subtitle">Выберите процедуру для себя</p>
+<div class="price-container">
+    <div class="price-category">Ресницы</div>
+    <div class="price-item">
+        <span>Ламинирование ресниц</span>
+        <b>5 000 ₸</b>
+    </div>
+    <div class="price-item">
+        <span>Окрашивание ресниц</span>
+        <b>Уточняйте</b>
+    </div>
+    <div class="price-category">Брови</div>
+    <div class="price-item">
+        <span>Ламинирование бровей</span>
+        <b>5 000 ₸</b>
+    </div>
+    <div class="price-item">
+        <span>Коррекция бровей</span>
+        <b>2 000 ₸</b>
+    </div>
+    <div class="price-item">
+        <span>Окрашивание бровей</span>
+        <b>2 000 ₸</b>
+    </div>
+    <div class="price-category">Дополнительные услуги</div>
+    <div class="price-item">
+        <span>Восковая депиляция</span>
+        <b>Уточняйте</b>
+    </div>
+    <div class="price-item">
+        <span>Дополнительный уход</span>
+        <b>Уточняйте</b>
+    </div>
+    <p class="price-note">
+        * Цены указаны в тенге. Стоимость дополнительных
+        услуг уточняется у мастера.
+    </p>
+</div>
+</section>
+<section id="gallery">
+    <h2 class="section-title">Наши работы</h2>
+    <p class="section-subtitle">Результаты процедур и красота в деталях</p>
+<div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1583001809873-a128495da465?w=800" alt="Работа с ресницами">
+    <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=800" alt="Оформление бровей">
+    <img src="https://images.unsplash.com/photo-1597225244660-1cd128c64284?w=800" alt="Beauty результат">
+    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800" alt="Beauty образ">
+    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800" alt="Красота и уход">
+    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=800" alt="Уход за собой">
+</div>
+</section>
+<section class="reviews" id="reviews">
+    <h2 class="section-title">Отзывы клиентов</h2>
+    <p class="section-subtitle">Ваше мнение помогает нам становиться лучше</p>
+<div class="reviews-grid">
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Очень понравилась атмосфера и отношение. Всё аккуратно и красиво!</p>
+        <span>Клиент LAMELLE</span>
+    </div>
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Результат превзошёл ожидания. Обязательно вернусь ещё!</p>
+        <span>Клиент LAMELLE</span>
+    </div>
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Очень приятный мастер, всё подробно объяснила. Спасибо!</p>
+        <span>Клиент LAMELLE</span>
+    </div>
+</div>
+<p style="text-align:center;font-size:10px;margin-top:25px;color:#897d72;">
+    Демонстрационные отзывы — замените их реальными отзывами клиентов.
+</p>
+</section>
+<section class="promotion" id="promotion">
+    <h2 class="section-title">Время для себя</h2>
+<p>
+    Позвольте себе немного заботы, внимания и красоты.
+    Следите за специальными предложениями LAMELLE
+    в наших социальных сетях.
+</p>
+<a href="#booking" class="btn">Записаться сейчас</a>
+</section>
+<section class="care" id="care">
+    <h2 class="section-title">Рекомендации по уходу</h2>
+    <p class="section-subtitle">
+        Чтобы результат процедуры радовал вас как можно дольше
+    </p>
+<div class="care-grid">
+    <div class="care-card">
+        <h3>После ламинирования ресниц</h3>
+        <p>
+            • Соблюдайте рекомендации мастера после процедуры.<br>
+            • Не трите глаза и не травмируйте ресницы.<br>
+            • Используйте мягкие средства для очищения.<br>
+            • Не забывайте о бережном ежедневном уходе.
+        </p>
+    </div>
+    <div class="care-card">
+        <h3>После ламинирования бровей</h3>
+        <p>
+            • Следуйте рекомендациям мастера.<br>
+            • Аккуратно очищайте кожу и волоски.<br>
+            • Используйте подходящие средства для ухода.<br>
+            • Не перегружайте брови косметическими средствами.
+        </p>
+    </div>
+</div>
+</section>
+<section id="faq">
+    <h2 class="section-title">Частые вопросы</h2>
+    <p class="section-subtitle">Ответы на вопросы перед записью</p>
+<div class="faq-list">
+    <details class="faq-item">
+        <summary>Сколько держится ламинирование ресниц?</summary>
+        <p>Продолжительность результата индивидуальна и зависит от естественного обновления ресниц и ухода.</p>
+    </details>
+    <details class="faq-item">
+        <summary>Можно ли делать ламинирование бровей регулярно?</summary>
+        <p>Периодичность подбирается индивидуально с учётом состояния волосков и рекомендаций мастера.</p>
+    </details>
+    <details class="faq-item">
+        <summary>Сколько длится процедура?</summary>
+        <p>Время зависит от выбранной процедуры. Точную продолжительность можно уточнить при записи.</p>
+    </details>
+    <details class="faq-item">
+        <summary>Как записаться на процедуру?</summary>
+        <p>Заполните форму онлайн-записи на сайте. Заявка откроется в WhatsApp.</p>
+    </details>
+    <details class="faq-item">
+        <summary>Есть ли противопоказания?</summary>
+        <p>Да. При воспалении, раздражении, повреждении кожи или глаз, аллергических реакциях и других противопоказаниях процедуру необходимо отложить и проконсультироваться со специалистом.</p>
+    </details>
+</div>
+</section>
+<section class="booking" id="booking">
+    <h2 class="section-title">Онлайн-запись</h2>
+    <p class="section-subtitle">Оставьте заявку, и мы свяжемся с вами</p>
+<form class="booking-form" id="bookingForm">
+    <input type="text" id="clientName" placeholder="Ваше имя" required>
+    <input type="tel" id="clientPhone" placeholder="Номер телефона" required>
+    <select id="service" required>
+        <option value="">Выберите услугу</option>
+        <option>Ламинирование ресниц — 5 000 ₸</option>
+        <option>Ламинирование бровей — 5 000 ₸</option>
+        <option>Коррекция бровей — 2 000 ₸</option>
+        <option>Окрашивание бровей — 2 000 ₸</option>
+        <option>Окрашивание ресниц</option>
+        <option>Восковая депиляция</option>
+        <option>Дополнительный уход</option>
+    </select>
+    <input type="date" id="bookingDate" required>
+    <select id="bookingTime" required>
+        <option value="">Выберите время</option>
+        <option>10:00</option>
+        <option>11:00</option>
+        <option>12:00</option>
+        <option>13:00</option>
+        <option>14:00</option>
+        <option>15:00</option>
+        <option>16:00</option>
+        <option>17:00</option>
+        <option>18:00</option>
+    </select>
+    <textarea id="comment" placeholder="Ваши пожелания или комментарии"></textarea>
+    <button type="submit" class="btn">Отправить заявку</button>
+</form>
+</section>
+<section class="contacts" id="contacts">
+    <h2 class="section-title">Контакты</h2>
+    <p class="section-subtitle">Будем рады видеть вас в LAMELLE</p>
+<div class="contacts-info">
+    <p>Город: Усть-Каменогорск</p>
+    <p>Instagram:
+        <a href="https://www.instagram.com/l.lamelle?vrfl=MWR2cHdlYjRwMnYzZQ==" target="_blank">@l.lamelle</a>
+    </p>
+    <p>WhatsApp:
+        <a href="https://wa.me/77713314162">+7 771 331 41 62</a>
+    </p>
+    <p>График работы: по предварительной записи</p>
+</div>
+<div class="socials">
+    <a href="https://www.instagram.com/l.lamelle?vrfl=MWR2cHdlYjRwMnYzZQ==" target="_blank">Instagram</a>
+    <a href="#booking">Онлайн-запись</a>
+</div>
+</section>
+<footer>
+    <div class="logo">LAMELLE.</div>
+    <p>BEAUTY STUDIO</p>
+    <p>Красота в каждой детали</p>
+    <p>Усть-Каменогорск | Казахстан</p>
+    <p>© 2026 LAMELLE. Все права защищены.</p>
+</footer>
+<script>
+// МОБИЛЬНОЕ МЕНЮ
+const menuButton = document.getElementById("menuButton");
+const navigation = document.getElementById("navigation");
+menuButton.addEventListener("click", function() {
+    navigation.classList.toggle("active");
+});
+document.querySelectorAll("nav a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navigation.classList.remove("active");
+    });
+});
+// ЗАПРЕТ ВЫБОРА ПРОШЕДШЕЙ ДАТЫ
+const dateInput = document.getElementById("bookingDate");
+const today = new Date();
+const localDate = new Date(
+    today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+dateInput.min = localDate;
+// ОНЛАЙН-ЗАПИСЬ В WHATSAPP
+document.getElementById("bookingForm")
+.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("clientName").value;
+    const phone = document.getElementById("clientPhone").value;
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("bookingDate").value;
+    const time = document.getElementById("bookingTime").value;
+    const comment = document.getElementById("comment").value;
+    const whatsappNumber = "77713314162";
+    const message =
+        "Здравствуйте! Хочу записаться в LAMELLE.\n\n" +
+        "Имя: " + name + "\n" +
+        "Телефон: " + phone + "\n" +
+        "Услуга: " + service + "\n" +
+        "Дата: " + date + "\n" +
+        "Время: " + time + "\n" +
+        "Комментарий: " + comment;
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+    window.open(whatsappURL, "_blank");
+});
+</script>
+</body>
+</html>
